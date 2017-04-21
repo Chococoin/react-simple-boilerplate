@@ -20,6 +20,8 @@ class Articles extends Component {
       </div>
     ));
 
+
+
     return (
       <div className="Articles">
         <h1>Articles:</h1>
@@ -33,7 +35,8 @@ class Articles extends Component {
               <div>{alma}</div>
           </table>
       </div>)
-  }
+    }
 }
 
 export default Articles;
+
