@@ -10,19 +10,30 @@ class Articles extends Component {
   }
 
   render() {
-
-    const Articles = null;
+    const alma = this.props.list_art.map(el => (
+      <div key={el.id} className="Articles">
+          <tr>
+            <td>{el.id}</td>
+            <td>{el.titulo}</td>
+            <td>{el.cuerpo}</td>
+          </tr>
+      </div>
+    ));
 
     return (
       <div className="Articles">
-        <h2>{hola}</h2>
-        <div></div>
-      </div>
-    );
+        <h1>Articles:</h1>
+          <table>
+              <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Del</th>
+              </tr>
+              <div>{alma}</div>
+          </table>
+      </div>)
   }
 }
-
-Articles.propTypes = {
-};
 
 export default Articles;

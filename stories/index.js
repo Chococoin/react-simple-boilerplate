@@ -10,12 +10,14 @@ storiesOf('Home', module)
     <Home counter={10} increment={action('incremented')}/>
   ));
 
-storiesOf('Articles', module)
-  .add('Table', () => (<div>hola</div>));
+storiesOf('Articles', module).add('Table', table);
 
 
 storiesOf('About', module)
-  .add('with 2 contributors', () => {
+  .add('with 2 contributors', aboutStory);
+
+
+function aboutStory() {
     const contributors = [{
       username: 'gvaldambrini',
       url: 'https://github.com/gvaldambrini',
@@ -32,7 +34,28 @@ storiesOf('About', module)
       <About
         contributors={contributors}
         fetchContributors={action('fetch contributors')}
-        loaded={true}/>,
-      <Articles hola={hola}/>
-    );
-  });
+        loaded={true}/>
+    );  
+}
+
+function table(){
+  const soul = [{id:1, 
+                 titulo:'Italia', 
+                 cuerpo:'La capital de Italia es Roma.',
+                 img:'picofwc.png'
+                }, 
+                {id:2,
+                 titulo:'Venezuela',
+                 cuerpo:'La capital de Venezuela  es Caracas.',
+                 img:'picofwc.png'
+                },
+                {id:3,
+                 titulo:'Francia',
+                 cuerpo:'La capital de Francia es Paris.',
+                 img:'picofwc.png'
+                }];
+
+                return (
+                  <Articles list_art={soul}/>)
+
+}
