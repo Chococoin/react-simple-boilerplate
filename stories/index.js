@@ -3,11 +3,15 @@ import { storiesOf, action } from '@kadira/storybook';
 
 import Home from '../src/components/Home';
 import About from '../src/components/About';
+import Articles from '../src/components/Articles'
 
 storiesOf('Home', module)
   .add('with counter', () => (
     <Home counter={10} increment={action('incremented')}/>
   ));
+
+storiesOf('Articles', module)
+  .add('Table', () => (<div>hola</div>));
 
 
 storiesOf('About', module)
@@ -28,6 +32,7 @@ storiesOf('About', module)
       <About
         contributors={contributors}
         fetchContributors={action('fetch contributors')}
-        loaded={true}/>
+        loaded={true}/>,
+      <Articles hola={hola}/>
     );
   });
